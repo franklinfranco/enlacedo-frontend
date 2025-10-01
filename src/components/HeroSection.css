@@ -1,0 +1,67 @@
+.hero-section {
+    display: flex;
+    flex-direction: column; /* Apilamos imagen y contenido verticalmente por defecto */
+    margin: 20px;
+    border-radius: 8px;
+    overflow: hidden; /* Para que la imagen y el contenido respeten los bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Una sombra para destacar la sección */
+  }
+  
+  .hero-image img {
+    display: block;
+    width: 100%;
+    height: auto; /* Mantiene la proporción de la imagen */
+  }
+  
+  .hero-content {
+    padding: 20px;
+    background-color: hsl(60, 6%, 80%); /* Fondo blanco para el contenido */
+  }
+  
+  .hero-title {
+    font-size: 2em;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: #131111;
+  }
+  
+  .hero-excerpt {
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 20px;
+  }
+  
+  .hero-button {
+    background-color: #007bff; /* Un azul llamativo para el botón */
+    color: #fff;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+  }
+  
+  .hero-button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Estilos para pantallas más grandes (ej. escritorio) para mostrar imagen y texto uno al lado del otro */
+  @media (min-width: 768px) {
+    .hero-section {
+      flex-direction: row; /* Imagen y contenido en fila */
+    }
+  
+    .hero-image {
+      flex: 0 0 50%; /* La imagen ocupa la mitad del ancho */
+    }
+  
+    .hero-content {
+      flex: 0 0 50%; /* El contenido ocupa la otra mitad */
+      padding: 30px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center; /* Centra el contenido verticalmente */
+    }
+  }

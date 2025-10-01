@@ -1,0 +1,28 @@
+.top-header {
+    background-color: #f8f8f8; /* Gris muy claro de fondo */
+    color: #555; /* Gris un poco más oscuro para el texto */
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.9em;
+    border-bottom: 1px solid #eee; /* Línea sutil en la parte inferior */
+  }
+  
+  .top-header-left span {
+    margin-right: 15px;
+  }
+  
+  .top-header-right {
+    display: flex;
+    align-items: center;
+  }
+  
+  .top-header-right span {
+    margin-left: 15px;
+  }
+  
+  .breaking-news {
+    font-weight: bold;
+    color: #d32f2f; /* Un rojo sutil para destacar las noticias */
+  }

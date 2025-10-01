@@ -1,0 +1,152 @@
+/* NewsDetail.css */
+.news-detail-page {
+  padding: 20px;
+  max-width: 960px;
+  margin: 0 auto;
+  font-family: sans-serif; /* Añadí una fuente por defecto */
+}
+
+.loading-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 200px;
+  font-style: italic;
+  color: #777;
+}
+
+.news-detail-header {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.news-detail-header h1 {
+  font-size: 2.5em;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.news-detail-meta {
+  color: #777;
+  font-size: 0.9em;
+  margin-bottom: 15px;
+}
+
+.news-detail-meta span {
+  margin-right: 15px;
+}
+
+.news-detail-image {
+  margin-bottom: 20px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.news-detail-image img {
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.news-detail-content {
+  line-height: 1.8;
+  color: #444;
+  font-size: 1em;
+}
+
+.news-detail-content p {
+  margin-bottom: 15px;
+}
+
+.news-detail-footer {
+  margin-top: 20px;
+  text-align: left;
+}
+
+.back-button {
+  padding: 10px 20px;
+  background-color: #f0f0f0;
+  color: #333;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1em;
+  transition: background-color 0.3s ease;
+}
+
+.back-button:hover {
+  background-color: #e0e0e0;
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+  .news-detail-page {
+    padding: 15px;
+  }
+
+  .news-detail-header h1 {
+    font-size: 2em;
+  }
+
+  .news-detail-meta {
+    font-size: 0.85em;
+  }
+
+  .news-detail-image {
+    margin-bottom: 15px;
+  }
+
+  .news-detail-image img {
+    max-width: 70%;
+  }
+
+  .news-detail-content {
+    font-size: 0.95em;
+    line-height: 1.7;
+  }
+
+  .back-button {
+    padding: 8px 15px;
+    font-size: 0.9em;
+  }
+}
+
+@media (max-width: 480px) {
+  .news-detail-page {
+    padding: 10px;
+  }
+
+  .news-detail-header h1 {
+    font-size: 1.8em;
+  }
+
+  .news-detail-meta span {
+    margin-right: 10px;
+  }
+
+  .news-detail-image {
+    margin-bottom: 10px;
+  }
+
+  .news-detail-image img {
+    max-width: 90%;
+  }
+
+  .news-detail-content {
+    font-size: 0.9em;
+  }
+
+  .news-detail-content p {
+    margin-bottom: 10px;
+  }
+
+  .back-button {
+    padding: 6px 12px;
+    font-size: 0.85em;
+  }
+}

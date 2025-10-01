@@ -1,0 +1,137 @@
+/* CategoryPage.css */
+.category-page {
+  padding: 20px;
+  max-width: 960px;
+  margin: 20px auto;
+  font-family: sans-serif;
+  position: relative; /* Para posicionar el botón si es necesario */
+}
+
+.back-button {
+  padding: 10px 20px;
+  background-color: #f0f0f0;
+  color: #333;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1em;
+  margin-bottom: 15px;
+  transition: background-color 0.3s ease;
+  text-decoration: none; /* Por si lo usas como Link en algún caso */
+}
+
+.back-button:hover {
+  background-color: #e0e0e0;
+}
+
+.category-page h1 {
+  font-size: 2.5em;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.category-news-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.news-item {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.news-link {
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  transition: transform 0.2s ease-in-out;
+}
+
+.news-link:hover {
+  transform: scale(1.02);
+}
+
+.news-image {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+}
+
+.news-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease-in-out;
+}
+
+.news-image:hover img {
+  transform: scale(1.05);
+}
+
+.news-details {
+  padding: 15px;
+}
+
+.news-title {
+  font-size: 1.2em;
+  font-weight: bold;
+  margin-bottom: 8px;
+  color: #333;
+}
+
+.news-date {
+  color: #777;
+  font-size: 0.9em;
+  margin-bottom: 10px;
+}
+
+.news-subtitle {
+  color: #555;
+  font-size: 0.95em;
+  line-height: 1.4;
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+  .category-page {
+    padding: 15px;
+  }
+
+  .category-page h1 {
+    font-size: 2em;
+    margin-bottom: 15px;
+  }
+
+  .category-news-list {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .news-details {
+    padding: 10px;
+  }
+
+  .news-title {
+    font-size: 1.1em;
+    margin-bottom: 5px;
+  }
+
+  .news-subtitle {
+    font-size: 0.9em;
+  }
+
+  .back-button {
+    padding: 8px 15px;
+    font-size: 0.9em;
+    margin-bottom: 10px;
+  }
+}

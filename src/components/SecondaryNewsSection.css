@@ -1,0 +1,96 @@
+.secondary-news-section {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-bottom: 1px solid #eee;
+    overflow-x: auto; /* Para evitar desbordamiento horizontal en pantallas pequeñas */
+  }
+  
+  .secondary-news-item {
+    flex: 1;
+    margin: 0 10px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+    background-color: #e6e2e2;
+    transition: transform 0.2s ease-in-out;
+    cursor: pointer;
+    min-width: 200px; /* Asegura un ancho mínimo para evitar que se compriman demasiado */
+    display: flex; /* Añadimos flex para organizar imagen y detalles */
+    flex-direction: column; /* Apilamos la imagen y los detalles verticalmente */
+  }
+  
+  .secondary-news-item:hover {
+    transform: scale(1.02);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  }
+  
+  .secondary-news-image {
+    position: relative;
+    width: 100%; /* Asegura que la imagen ocupe el ancho del contenedor */
+    height: auto; /* La altura se ajustará proporcionalmente */
+    overflow: hidden; /* Recorta si la imagen es más grande que el contenedor */
+    margin-bottom: 8px; /* Espacio entre la imagen y los detalles */
+  }
+  
+  .secondary-news-image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Cubre el contenedor manteniendo la proporción, puede recortar */
+  }
+  
+  .secondary-news-details {
+    padding: 0 10px 10px 10px; /* Padding alrededor de los detalles */
+  }
+  
+  .secondary-news-title {
+    font-size: 1em;
+    font-weight: bold;
+    margin-top: 0;
+    margin-bottom: 5px;
+    color: #333;
+    text-align: left; /* Alineamos el título a la izquierda */
+  }
+  
+  .secondary-news-date {
+    font-size: 0.7em; /* Tamaño más pequeño para la fecha */
+    color: #777;
+    margin-top: 0;
+    margin-bottom: 5px;
+    text-align: left; /* Alineamos la fecha a la izquierda */
+  }
+  
+  .secondary-news-subtitle {
+    font-size: 0.8em; /* Tamaño más pequeño para el subtítulo */
+    color: #555;
+    margin-top: 0;
+    margin-bottom: 0;
+    text-align: left; /* Alineamos el subtítulo a la izquierda */
+  }
+  
+  .read-more-indicator {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    padding: 8px 12px;
+    border-radius: 5px;
+    font-size: 0.9em;
+    font-weight: bold;
+    z-index: 10; /* Asegura que esté por encima de la imagen si es necesario */
+  }
+  
+  /* Para pantallas más pequeñas, apilar las noticias secundarias */
+  @media (max-width: 767px) {
+    .secondary-news-section {
+      flex-direction: column;
+    }
+  
+    .secondary-news-item {
+      margin: 10px 0;
+    }
+  }

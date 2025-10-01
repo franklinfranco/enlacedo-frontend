@@ -1,0 +1,38 @@
+.breaking-news-section {
+  background-color: #f9a825; /* Amarillo mostaza moderno */
+  color: #fff;
+  padding: 15px 20px;
+  display: flex;
+  align-items: center;
+  font-size: 1em;
+  overflow: hidden; /* Asegura que el texto no se desborde visiblemente */
+}
+
+.breaking-news-title {
+  font-weight: bold;
+  margin-right: 15px;
+  white-space: nowrap; /* Evita que "AHORA:" se rompa */
+}
+
+.breaking-news-content {
+  flex-grow: 1; /* Permite que el contenido ocupe el espacio restante */
+  white-space: nowrap; /* Evita que el texto de la noticia se rompa */
+  overflow: hidden; /* Oculta el texto que se desplaza fuera del contenedor */
+}
+
+.breaking-news-content p {
+  margin: 0;
+  font-weight: 500;
+  display: inline-block; /* Permite la animación horizontal */
+  padding-left: 100%; /* Empieza fuera de la pantalla a la derecha */
+  animation: moverTexto 15s linear infinite; /* Aplica la animación */
+}
+
+@keyframes moverTexto {
+  0% {
+    transform: translateX(0%); /* Empieza desde la derecha */
+  }
+  100% {
+    transform: translateX(-100%); /* Se desplaza completamente a la izquierda */
+  }
+}

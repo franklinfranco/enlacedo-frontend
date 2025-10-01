@@ -1,0 +1,54 @@
+.content {
+  background-color: #f3ecec;
+  padding: 20px;
+  margin-top: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  flex-grow: 1; /* Permite que el contenido principal crezca y ocupe el espacio restante */
+}
+
+.App-header {
+  padding: 20px;
+  background-color: #fff;
+  border-bottom: 1px solid #eee;
+}
+
+.App {
+  font-family: sans-serif;
+  background-color: #f4f4f4;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Estilos para el contenedor del contenido principal y la barra lateral */
+.content-with-sidebar {
+  display: flex; /* Usamos flex para colocar los elementos en fila (uno al lado del otro) */
+  gap: 20px; /* Espacio entre el contenido principal y la barra lateral */
+  padding: 20px; /* Añade un poco de espacio alrededor del contenido y la barra lateral */
+}
+
+/* Estilos para el contenido principal */
+.main-content {
+  flex-grow: 1; /* El contenido principal ocupa la mayor parte del espacio */
+}
+
+/* Estilos para la barra lateral */
+.sidebar {
+  width: 300px; /* Establece un ancho para la barra lateral (ajusta según necesites) */
+  background-color: #f9f9f9; /* Un fondo ligero para distinguirla (opcional) */
+  padding: 15px;
+  border-radius: 8px; /* Bordes redondeados (opcional) */
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05); /* Sombra sutil (opcional) */
+}
+
+.ad-banner {
+  margin-bottom: 20px;
+}
+
+.ad-banner img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 5px; /* Opcional: bordes redondeados para el banner */
+}

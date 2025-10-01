@@ -1,0 +1,238 @@
+/* MainHeader.css */
+
+.main-header {
+  display: flex;
+  flex-direction: column;
+  background-color: #f8f9fa;
+  position: relative;
+  width: 100%;
+}
+
+.top-bar {
+  background-color: #f0ad4e;
+  color: white;
+  padding: 5px 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.75em;
+}
+
+.current-date {
+  color: white;
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 15px;
+  flex-wrap: wrap;
+}
+
+.logo {
+  width: 100px;
+}
+
+.logo img {
+  width: 100%;
+  height: auto;
+}
+
+/* Menu icon (hamburguesa) */
+.menu-container {
+  display: flex;
+  align-items: center;
+}
+
+.menu {
+  width: 30px;
+  height: auto;
+  cursor: pointer;
+  margin-left: 15px;
+}
+
+.menu img {
+  width: 100%;
+  height: auto;
+}
+
+/* Login */
+.login {
+  width: 30px;
+  height: auto;
+  cursor: pointer;
+  position: relative;
+  margin-left: 15px;
+}
+
+.login img {
+  width: 100%;
+  height: auto;
+}
+
+/* Menú horizontal siempre visible */
+.main-navigation {
+  display: block;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.main-navigation ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+}
+
+.main-navigation li {
+  margin: 5px 10px;
+}
+
+.main-navigation a {
+  text-decoration: none;
+  color: #333;
+  padding: 8px 12px;
+  border-radius: 5px;
+  font-weight: 500;
+  font-size: 0.95em;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.main-navigation a:hover {
+  background-color: #007bff;
+  color: white;
+}
+
+/* Dropdown menu (hamburguesa) también visible en todos los dispositivos */
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 10px;
+  right: 10px;
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  z-index: 1000;
+  padding: 10px 0;
+  animation: fadeIn 0.3s ease;
+}
+
+.dropdown-menu.open {
+  display: block;
+}
+
+.dropdown-menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.dropdown-menu li {
+  padding: 10px 15px;
+  font-size: 0.95em;
+  transition: background-color 0.2s ease;
+}
+
+.dropdown-menu li:hover {
+  background-color: #f0f0f0;
+}
+
+/* Login dropdown */
+.login-menu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  z-index: 1000;
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  display: none;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  margin-top: 0.5rem;
+  min-width: 150px;
+}
+
+.login-menu.open {
+  display: block;
+}
+
+.login-menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.login-menu li {
+  padding: 8px 12px;
+  font-size: 0.9em;
+  color: #333;
+}
+
+.login-menu li:hover {
+  background-color: #007bff;
+  color: white;
+}
+
+.login-menu a {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.logout-button {
+  background: none;
+  border: none;
+  width: 100%;
+  text-align: left;
+  padding: 8px 12px;
+  cursor: pointer;
+  font-size: 0.9em;
+  color: #333;
+}
+
+.logout-button:hover {
+  background-color: #007bff;
+  color: white;
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Mejoras visuales en pantallas grandes */
+@media (min-width: 768px) {
+  .logo {
+    width: 120px;
+  }
+
+  .menu {
+    width: 32px;
+  }
+
+  .login {
+    width: 32px;
+  }
+
+  .main-navigation a {
+    font-size: 1em;
+    padding: 10px 14px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .logo {
+    width: 150px;
+  }
+
+  .main-navigation a {
+    font-size: 1.1em;
+    padding: 12px 16px;
+  }
+}

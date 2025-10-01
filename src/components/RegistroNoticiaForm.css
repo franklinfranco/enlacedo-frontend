@@ -1,0 +1,138 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: sans-serif;
+    background-color: #f0f2f5;
+}
+
+.registro-noticia-container {
+    width: 100%;
+    min-height: 100vh;
+    padding: 2rem 1rem;
+    box-sizing: border-box;
+    background-color: #ffffff;
+}
+
+.registro-noticia-heading {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+    color: #222;
+}
+
+.registro-noticia-form {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.registro-noticia-input-group {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.registro-noticia-label {
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: #333;
+}
+
+.registro-noticia-input,
+.registro-noticia-textarea,
+.registro-noticia-select {
+    padding: 0.7rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    width: 100%;
+    box-sizing: border-box;
+    background-color: #fff;
+    transition: border-color 0.2s;
+}
+
+.registro-noticia-input:focus,
+.registro-noticia-textarea:focus,
+.registro-noticia-select:focus {
+    border-color: #0077cc;
+    outline: none;
+}
+
+.registro-noticia-textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.registro-noticia-checkbox {
+    width: 18px;
+    height: 18px;
+    margin-top: 0.5rem;
+}
+
+.registro-noticia-button {
+    padding: 1rem;
+    background-color: #0077cc;
+    color: white;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%;
+}
+
+.registro-noticia-button:hover {
+    background-color: #005fa3;
+}
+
+.registro-noticia-error-message {
+    color: #d32f2f;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.registro-noticia-success-message {
+    color: #388e3c;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+/* Responsive: no restringimos ancho, solo ajustamos tipografía y espaciado */
+@media (max-width: 768px) {
+    .registro-noticia-heading {
+        font-size: 1.6rem;
+    }
+
+    .registro-noticia-input,
+    .registro-noticia-textarea,
+    .registro-noticia-select {
+        font-size: 0.95rem;
+    }
+
+    .registro-noticia-button {
+        font-size: 1rem;
+        padding: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .registro-noticia-heading {
+        font-size: 1.4rem;
+    }
+
+    .registro-noticia-input,
+    .registro-noticia-textarea,
+    .registro-noticia-select {
+        font-size: 0.9rem;
+    }
+
+    .registro-noticia-button {
+        font-size: 0.95rem;
+        padding: 0.8rem;
+    }
+}
