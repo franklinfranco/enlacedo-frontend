@@ -2,6 +2,24 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './RegistroNoticiaForm.css';
 
+// Define el estado inicial del formulario una sola vez
+const INITIAL_FORM_STATE = {
+    titulo: '',
+    subtitulo: '',
+    contenido: '',
+    fecha_publicacion: '',
+    fecha_actualizacion: '',
+    id_seccion: '',
+    id_autor: '',
+    fuente_original: '',
+    url_fuente: '',
+    palabras_clave: '',
+    es_destacada: false,
+    estado: 'publicado',
+    url: '',
+    principal: false,
+};
+
 // Función para verificar si el usuario está autenticado
 const useAuth = () => {
     const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -19,6 +37,7 @@ const useAuth = () => {
                 nombreAutor: storedNombreAutor,
             });
         } else {
+            // Si no está logueado, redirigir al login
             navigate('/login');
         }
     }, [navigate]);
@@ -28,37 +47,35 @@ const useAuth = () => {
 
 function RegistroNoticiaForm({ apiUrl }) {
     const { isLoggedIn, userData } = useAuth();
-    const [form, setForm] = useState({
-        titulo: '',
-        subtitulo: '',
-        contenido: '',
-        fecha_publicacion: '',
-        fecha_actualizacion: '',
-        id_seccion: '',
-        id_autor: '',
-        fuente_original: '',
-        url_fuente: '',
-        palabras_clave: '',
-        es_destacada: false,
-        estado: 'publicado',
-        url: '',
-        principal: false,
-    });
+    const navigate = useNavigate(); // Hook de navegación
+    
+    // Inicializa el formulario con el estado inicial
+    const [form, setForm] = useState(INITIAL_FORM_STATE);
 
     const [secciones, setSecciones] = useState([]);
     const [error, setError] = useState('');
     const [registroExitoso, setRegistroExitoso] = useState(false);
     const [loading, setLoading] = useState(true);
 
+    // Función para resetear el formulario (manteniendo el ID del autor)
+    const resetForm = () => {
+        setForm({ 
+            ...INITIAL_FORM_STATE, 
+            id_autor: userData?.autorId || '' 
+        });
+    };
+
     useEffect(() => {
         if (isLoggedIn) {
             if (userData) {
+                // Setea el id_autor al cargar los datos del usuario
                 setForm(prev => ({ ...prev, id_autor: userData.autorId }));
             }
 
             const fetchSecciones = async () => {
                 try {
                     const res = await fetch(`${apiUrl}/secciones`);
+                    if (!res.ok) throw new Error('Fallo al obtener secciones');
                     const data = await res.json();
                     setSecciones(data);
                 } catch (err) {
@@ -71,12 +88,6 @@ function RegistroNoticiaForm({ apiUrl }) {
             fetchSecciones();
         } else {
             setLoading(false);
-        }
-
-        console.log('Datos en localStorage:');
-        for (let i = 0; i < localStorage.length; i++) {
-            const key = localStorage.key(i);
-            console.log(`${key}: ${localStorage.getItem(key)}`);
         }
     }, [isLoggedIn, userData, apiUrl]);
 
@@ -107,14 +118,20 @@ function RegistroNoticiaForm({ apiUrl }) {
             const data = await res.json();
             if (res.ok) {
                 setRegistroExitoso(true);
+                resetForm(); // <-- LIMPIAR FORMULARIO DESPUÉS DEL ÉXITO
                 console.log('Registro exitoso:', data);
             } else {
-                setError(data.message || 'Error al registrar la noticia.');
+                setError(data.message || `Error (${res.status}): Fallo al registrar la noticia.`);
             }
         } catch (err) {
             console.error(err);
             setError('Error de red al intentar registrar la noticia.');
         }
+    };
+
+    // Función para el botón "Volver Atrás"
+    const handleGoBack = () => {
+        navigate(-1); // Vuelve a la página anterior
     };
 
     if (!isLoggedIn) return null;
@@ -182,7 +199,17 @@ function RegistroNoticiaForm({ apiUrl }) {
                     </div>
                 ))}
 
-                <button type="submit" className="registro-noticia-button">Registrar</button>
+                <div className="form-actions">
+                    {/* BOTÓN VOLVER ATRÁS */}
+                    <button 
+                        type="button" 
+                        onClick={handleGoBack} 
+                        className="registro-noticia-button back-button">
+                        Volver Atrás
+                    </button>
+                    {/* BOTÓN REGISTRAR */}
+                    <button type="submit" className="registro-noticia-button">Registrar</button>
+                </div>
             </form>
         </div>
     );
