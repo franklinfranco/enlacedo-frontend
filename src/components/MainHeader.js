@@ -111,7 +111,7 @@ function MainHeader() {
                             ) : (
                                 <>
                                     <li><Link to="/login" onClick={toggleLoginMenu}>Login</Link></li>
-                                    <li><Link to="/register" onClick={toggleLoginMenu}>Registrar</Link></li>
+                                    <li><Link to="/registro" onClick={toggleLoginMenu}>Registrar</Link></li>
                                 </>
                             )}
                         </ul>
