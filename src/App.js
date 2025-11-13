@@ -12,6 +12,7 @@ import RegistroForm from './components/RegistroForm';
 import RegistroNoticiaForm from './components/RegistroNoticiaForm';
 import ListadoNoticia from './components/ListaNoticias';
 import ModificarNoticiaForm from './components/ModificarNoticiaForm';
+import PromoVideo from './components/PromoVideo';
 
 import './App.css';
 
@@ -45,6 +46,7 @@ function App() {
           <Route path="/" element={
             <>
               <HeroSection allNews={allNews} />
+              <PromoVideo />
               <Sidebar />
               {secciones.map(sec => (
                 <CategoryNewsSection
