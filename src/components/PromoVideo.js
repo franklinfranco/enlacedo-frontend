@@ -4,11 +4,11 @@ import './PromoVideo.css';
 function PromoVideo() {
   // Lista de videos (IDs extraídos de tus enlaces)
   const videoIds = [
-    '-XREVOeQz2A',
-    'E_KoAXxhahc',
-    'pc43bD6xsvA',
-    'bjtUzc1g23E',
-    'GUDtY-yRKSc'
+    '-LLP8xtEWbXE',
+    'UwjsuWFoqFI',
+    'XR0bmrNawA4',
+    'dQJoF_JezZ4',
+    'xjukKYM53Fc'
   ];
 
   // Selecciona un video aleatoriamente al cargar
